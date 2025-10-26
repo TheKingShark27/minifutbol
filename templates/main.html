@@ -6,8 +6,42 @@
     <title>Futbol Guess</title>
 </head>
 <body>
-    <h1>MAIN PAGE</h1>
-        <img src="https://www.google.com/imgres?q=spongebob&imgurl=https%3A%2F%2Fi.scdn.co%2Fimage%2Fab67616100005174877d4c061d08c040974224be&imgrefurl=https%3A%2F%2Fopen.spotify.com%2Fartist%2F3zCAmjKyHsG7kTGsls1cfj&docid=Z3P1csODYqcyJM&tbnid=_ymaBpHifZSIWM&vet=12ahUKEwieupaiqLuQAxXgJkQIHTDJEkgQM3oECDsQAA..i&w=320&h=320&hcb=2&ved=2ahUKEwieupaiqLuQAxXgJkQIHTDJEkgQM3oECDsQAA"> 
+<style>
+    .left-thing{
+        display: flex;
+        justify-content: left;
+        border: solid black 10px;
+        padding: 40px;
+        background-color: cadetblue;
+    }
+    .right-thing{
+        display: flex;
+        justify-content: right;
+        border: solid black 10px;
+        padding: 40px;
+        background-color: cadetblue;
+    }
+    .left-button{
+        padding: 20px;
+    }
+    .right-button{
+        padding: 20px
+    }
+</style>    
+ <h1>MAIN PAGE</h1>
+ {%set t1=teams[nums[0]]["name"]%}
+ {%set t2=teams[nums[4]]["name"]%}
+
+<form action="{{url_for('main')}}" method="POST">
+ <h1 class="left-thing"><button class="left-button" type="submit" name="main" value="left">This is Higher</button>  {{t1}}</h1>
+ <h1 class="right-thing"><button class="right-button" type="submit" name="main" value="right">This is Higher</button>{{t2}}</h1>
+</form>
+<!-- {% for team in teams%}
+    <p>{{team}}</p>
+    <br>
+{% endfor %} -->
+
+
 
 </body>
 </html>
