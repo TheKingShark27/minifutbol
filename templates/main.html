@@ -29,12 +29,14 @@
     }
 </style>    
  <h1>MAIN PAGE</h1>
- {%set t1=teams[nums[0]]["name"]%}
- {%set t2=teams[nums[4]]["name"]%}
+ {%set t1=teams[list[0]]["name"]%}
+ {%set t2=teams[list[1]]["name"]%}
 
 <form action="{{url_for('main')}}" method="POST">
- <h1 class="left-thing"><button class="left-button" type="submit" name="main" value="left">This is Higher</button>  {{t1}}</h1>
- <h1 class="right-thing"><button class="right-button" type="submit" name="main" value="right">This is Higher</button>{{t2}}</h1>
+ <h1 class="left-thing">  {{t1}}</h1>
+ <button class="left-button" type="submit" name="choice-buttons" value="left,{{list[0]}},{{list[1]}}">This is Higher</button>
+ <h1 class="right-thing">{{t2}}</h1>
+ <button class="right-button" type="submit" name="choice-buttons" value="right,{{list[0]}},{{list[1]}}">This is Higher</button>
 </form>
 <!-- {% for team in teams%}
     <p>{{team}}</p>
